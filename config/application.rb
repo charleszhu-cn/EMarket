@@ -22,5 +22,17 @@ module EMarket
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # config mail server
+    # config stmp mail server
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        address:              'smtp.ym.163.com',
+        port:                 25,
+        domain:               'charleszhu.io',
+        user_name:            'no-reply@charleszhu.io',
+        password:             'zct320ZCT840203',
+        authentication:       'login',
+        enable_starttls_auto: true  }
   end
 end

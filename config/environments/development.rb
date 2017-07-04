@@ -42,9 +42,14 @@ Rails.application.configure do
   # config development mail url
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  #config skip some generate
   config.generators do |g|
     g.stylesheets     false
     g.javascripts     false
     g.test_framework  false
+    g.helper          false
   end
+
+  config.action_mailer.raise_delivery_errors = true
+
 end
